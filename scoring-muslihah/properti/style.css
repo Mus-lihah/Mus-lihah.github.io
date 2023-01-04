@@ -15,17 +15,17 @@ body {
 }
 
 .score__right, .score__left {
-    width: 50%;
+    width: 100%;
     font-weight: bold;
 }
 
 .score__right {  
-    height: 95%; 
+    height: 100%; 
     background-color: #1E1E1E; 
 }
 
 .score__left {
-    height: 95%; 
+    height: 100%; 
     background-color: #222325;  
 }
 
