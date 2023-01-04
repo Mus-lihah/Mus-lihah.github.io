@@ -3,13 +3,13 @@
 html, body {
   font-family: 'Inter', sans-serif;
   font-size: 10px;
-  height: 95%;
+  height: 100%;
   margin: 0;
   user-select: none;
 }
 
 .container {
-  height: 99%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
 }
