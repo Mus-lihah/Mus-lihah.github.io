@@ -109,17 +109,17 @@ body {
 
   .score__right, .score__left {
     width: 50%;
-    height: 100%;
+    height: 50%;
   }
 
   .user {
-    display: flex;
+    display: none;
   }
 }
 
 @media screen and (orientation: portrait) {
   .container {
-    display: block;
+    display: flex;
   }
 
   .score__right, .score__left {
