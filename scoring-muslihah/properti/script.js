@@ -38,3 +38,13 @@ function handleTouchMove(event) {
   // update the previous y-coordinate
   prevY = currentY;
 }
+
+// add touch end event listener to the scores
+score1.addEventListener("touchend", handleTouchEnd);
+score2.addEventListener("touchend", handleTouchEnd);
+
+function handleTouchEnd(event) {
+  // reset the previous y-coordinate
+  prevY = null;
+}
+
