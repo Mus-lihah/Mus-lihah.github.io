@@ -1,8 +1,8 @@
 const score1 = document.getElementById("score1");
 const score2 = document.getElementById("score2");
 
-let prevY; // variable to store the previous y-coordinate of the touch point
-let targetScore; 
+let prevY;
+let targetScore;
 let activeScore; 
 score1.addEventListener("touchstart", handleTouchStart);
 score2.addEventListener("touchstart", handleTouchStart);
@@ -10,7 +10,7 @@ score2.addEventListener("touchstart", handleTouchStart);
 function handleTouchStart(event) {
   activeScore = this;
   prevY = event.touches[0].clientY;
-  targetScore = parseInt(this.textContent);
+  targetScore = null;
 }
 
 score1.addEventListener("touchmove", handleTouchMove);
@@ -23,10 +23,12 @@ function handleTouchMove(event) {
 
   const diffY = prevY - currentY;
 
-  if (diffY > 0) {
-    targetScore++;
-  } else if (diffY < 0 && targetScore > 0) {
-    targetScore--;
+  if (!targetScore) {
+    if (diffY > 0) {
+      targetScore = parseInt(activeScore.textContent) + 1;
+    } else if (diffY < 0 && activeScore.textContent > 0) {
+      targetScore = parseInt(activeScore.textContent) - 1;
+    }
   }
 
   prevY = currentY;
@@ -38,7 +40,9 @@ score2.addEventListener("touchend", handleTouchEnd);
 function handleTouchEnd(event) {
   prevY = null;
 
-  animateScore.bind(activeScore)();
+  if (targetScore !== null) {
+    animateScore.bind(activeScore)();
+  }
 }
 
 function animateScore() {
