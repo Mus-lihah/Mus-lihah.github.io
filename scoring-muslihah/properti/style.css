@@ -1,70 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    user-select: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  user-select: none;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 95%;
 }
 
 .score__right, .score__left {
-    width: 50%;
-    font-weight: bold;
+  width: 50%;
+  font-weight: bold;
 }
 
-.score__right {  
-    height: 530px; 
-    background-color: #1E1E1E; 
+.score__right {
+  height: 530px;
+  background-color: #1E1E1E;
 }
 
 .score__left {
-    height: 530px; 
-    background-color: #222325;  
+  height: 530px;
+  background-color: #222325;
 }
 
 .score__right, .score__left {
-    color: white;
-    font-size: 80px;  
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: white;
+  font-size: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sum__right, .sum__left {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.user__container {
+  display: block;
 }
 
 .user {
-    display: flex;
-    width: 100%;
-    height: 3%;
+  display: flex;
+  width: 100%;
+  height: 3%;
 }
 
 .first__user, .second__user {
-    flex: 1.5;
-    height: 64px;
+  flex: 1.5;
+  height: 64px;
 }
 
 .first__user {
-    background-color: #222325;
+  background-color: #222325;
 }
 
 .second__user {
-    background-color: #535456;
-    text-align: right;
+  background-color: #535456;
+  text-align: right;
 }
 
 .right__user, .left__user {
-    width: 24px;
-    height: 32px;
-    background-color: #FFD600;
-    text-align: center;
+  width: 24px;
+  height: 32px;
+  background-color: #FFD600;
+  text-align: center;
 }
 
 .first__user .user1 {
@@ -78,24 +89,46 @@ body {
 }
 
 .user1 p, .user2 p {
-    color: white;
-    margin-left: 10px;
+  color: white;
+  margin-left: 10px;
 }
 
 .user2 {
-    direction: rtl;
+  direction: rtl;
 }
 
 .user2 p {
-    margin-right: 10px;
-    font-size: 10px;
+  margin-right: 10px;
 }
 
-.right__user p, .left__user p {
-    text-align: left;
-    color :black;
+@media screen and (orientation: landscape) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .score__right, .score__left {
+    width: 50%;
+    height: 100%;
+  }
+
+  .user__container {
+    display: none;
+  }
 }
 
-.left__user {
-    margin-top: -1px;
+@media screen and (orientation: portrait) {
+  .container {
+    display: block;
+  }
+
+  .score__right, .score__left {
+    width: 100%;
+    height: 50%;
+  }
+
+  .user__container {
+    display: block;
+  }
 }
+
