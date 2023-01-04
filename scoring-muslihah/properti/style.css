@@ -5,7 +5,6 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     user-select: none;
-    -webkit-user-drag: none;
 }
 
 .container {
@@ -21,12 +20,12 @@ body {
 }
 
 .score__right {  
-    height: 500px; 
+    height: 95%; 
     background-color: #1E1E1E; 
 }
 
 .score__left {
-    height: 500px; 
+    height: 95%; 
     background-color: #222325;  
 }
 
@@ -49,7 +48,7 @@ body {
 }
 
 .first__user, .second__user {
-    flex: 1.5;
+    flex: 1;
     height: 64px;
 }
 
