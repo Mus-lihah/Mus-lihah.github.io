@@ -3,12 +3,15 @@ const score2 = document.getElementById("score2");
 
 let prevY; // variable to store the previous y-coordinate of the touch point
 let targetScore; // variable to store the target score
+let activeScore; // variable to store the active score element
 
 // add touch start event listener to the scores
 score1.addEventListener("touchstart", handleTouchStart);
 score2.addEventListener("touchstart", handleTouchStart);
 
 function handleTouchStart(event) {
+  // set the active score element
+  activeScore = this;
   // get the y-coordinate of the touch point
   prevY = event.touches[0].clientY;
   // store the initial score as the target score
@@ -51,7 +54,7 @@ function handleTouchEnd(event) {
   prevY = null;
 
   // start the animation loop
-  animateScore();
+  animateScore.bind(activeScore)();
 }
 
 function animateScore() {
