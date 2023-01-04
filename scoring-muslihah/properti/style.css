@@ -3,13 +3,13 @@
 html, body {
   font-family: 'Inter', sans-serif;
   font-size: 10px;
-  height: 100%;
+  height: 640px;
   margin: 0 0 0 0;
   user-select: none;
 }
 
 .container {
-  height: 95%;
+  height: 576px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -40,7 +40,8 @@ html, body {
 
 .user {
   display: flex;
-  height : 5%;
+  width: 100%;
+  height : 64px ;
 }
 
 .first__user, .second__user {
