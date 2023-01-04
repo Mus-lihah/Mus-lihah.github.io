@@ -56,5 +56,5 @@ function animateScore() {
     this.textContent = parseInt(this.textContent) - 1;
   }
 
-  setTimeout(animateScore.bind(this), 50);
+  setTimeout(animateScore.bind(this), 200);
 }
