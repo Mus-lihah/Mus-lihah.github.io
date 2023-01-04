@@ -1,22 +1,32 @@
 const sumRight = document.querySelector(".sum__right");
 const sumLeft = document.querySelector(".sum__left");
 
-sumRight.addEventListener("click", event => {
-  if (event.offsetX >= 0 && event.offsetX <= sumRight.offsetWidth && event.offsetY >= 0 && event.offsetY <= sumRight.offsetHeight) {
-    if (event.offsetY < sumRight.offsetHeight / 2) {
-      sumRight.textContent = parseInt(sumRight.textContent) + 1;
-    } else if (event.offsetY >= sumRight.offsetHeight / 2 && parseInt(sumRight.textContent) > 0) {
-      sumRight.textContent = parseInt(sumRight.textContent) - 1;
-    }
-  }
-});
+sumRight.addEventListener("click", handleClick);
+sumRight.addEventListener("touchstart", handleTouchStart);
+sumRight.addEventListener("touchend", handleTouchEnd);
 
-sumLeft.addEventListener("click", event => {
-    if (event.offsetX >= 0 && event.offsetX <= sumLeft.offsetWidth && event.offsetY >= 0 && event.offsetY <= sumLeft.offsetHeight) {
-      if (event.offsetY < sumLeft.offsetHeight / 2) {
-        sumLeft.textContent = parseInt(sumLeft.textContent) + 1;
-      } else if (event.offsetY >= sumLeft.offsetHeight / 2 && parseInt(sumLeft.textContent) > 0) {
-        sumLeft.textContent = parseInt(sumLeft.textContent) - 1;
-      }
-    }
-  });
+sumLeft.addEventListener("click", handleClick);
+sumLeft.addEventListener("touchstart", handleTouchStart);
+sumLeft.addEventListener("touchend", handleTouchEnd);
+
+function handleClick(event) {
+  if (event.offsetY < this.offsetHeight / 2) {
+    this.textContent = parseInt(this.textContent) + 1;
+  } else if (event.offsetY >= this.offsetHeight / 2 && parseInt(this.textContent) > 0) {
+    this.textContent = parseInt(this.textContent) - 1;
+  }
+}
+
+function handleTouchStart(event) {
+  this.touchStartY = event.touches[0].clientY;
+}
+
+function handleTouchEnd(event) {
+  const touchDeltaY = this.touchStartY - event.changedTouches[0].clientY;
+
+  if (touchDeltaY > 0 && this.textContent > 0) {
+    this.textContent = parseInt(this.textContent) - 1;
+  } else if (touchDeltaY < 0) {
+    this.textContent = parseInt(this.textContent) + 1;
+  }
+}
