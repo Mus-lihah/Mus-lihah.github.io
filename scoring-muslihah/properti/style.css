@@ -42,7 +42,7 @@ html, body {
 .user {
   display: flex;
   width: 100%;
-  height: -5%;
+  height: -1%;
 }
 
 .first__user, .second__user {
