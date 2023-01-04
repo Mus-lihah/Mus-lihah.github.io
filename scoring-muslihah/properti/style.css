@@ -3,7 +3,7 @@
 html, body {
   font-family: 'Inter', sans-serif;
   font-size: 10px;
-  height: 1800px;
+  height: 100%;
   margin: 0 0 0 0;
   user-select: none;
 }
@@ -40,7 +40,7 @@ html, body {
 
 .user {
   display: flex;
-  height : 10%;
+  height : 5%;
 }
 
 .first__user, .second__user {
