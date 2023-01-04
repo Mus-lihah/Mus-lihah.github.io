@@ -113,7 +113,7 @@ body {
   }
 
   .user {
-    display: none;
+    display: flex;
   }
 }
 
@@ -123,7 +123,7 @@ body {
   }
 
   .score__right, .score__left {
-    width: 100%;
+    width: 50%;
     height: 50%;
   }
   
