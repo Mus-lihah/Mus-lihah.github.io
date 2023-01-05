@@ -40,7 +40,7 @@ function handleTouchMove(event) {
       targetScore = parseInt(activeScore.textContent) - 1;
     }
   }
-  
+
   if (targetScore > 21) {
     targetScore = 21;
   } else if (targetScore < 0) {
@@ -64,7 +64,7 @@ function handleMouseMove(event) {
       targetScore = parseInt(activeScore.textContent) - 1;
     }
   }
-  
+
   if (targetScore > 21) {
     targetScore = 21;
   } else if (targetScore < 0) {
