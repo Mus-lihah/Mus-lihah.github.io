@@ -40,6 +40,12 @@ function handleTouchMove(event) {
       targetScore = parseInt(activeScore.textContent) - 1;
     }
   }
+  
+  if (targetScore > 21) {
+    targetScore = 21;
+  } else if (targetScore < 0) {
+    targetScore = 0;
+  }
 
   prevY = currentY;
 }
@@ -57,6 +63,12 @@ function handleMouseMove(event) {
     } else if (diffY < 0 && activeScore.textContent > 0) {
       targetScore = parseInt(activeScore.textContent) - 1;
     }
+  }
+  
+  if (targetScore > 21) {
+    targetScore = 21;
+  } else if (targetScore < 0) {
+    targetScore = 0;
   }
 
   prevY = currentY;
